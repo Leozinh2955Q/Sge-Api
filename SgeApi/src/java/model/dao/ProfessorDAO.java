@@ -28,8 +28,31 @@ public class ProfessorDAO {
             PreparedStatement stmt = null;
             ResultSet rs = null;
             
-            stmt = conexao.prepareStatement("");
+            stmt = conexao.prepareStatement("SELECT * FROM professor;");
             
+            rs = stmt.executeQuery();
+            
+            while(rs.next()){
+                Professor professor = new Professor();
+                DisciplinaDAO disciplina = new DisciplinaDAO();
+                
+                
+                professor.setId_professor(rs.getInt("id_professor"));
+                professor.setNome(rs.getString("nome"));
+                professor.setSobrenome(rs.getString("sobrenome"));
+                professor.setCpf(rs.getString("cpf"));
+                professor.setImagem(rs.getString("imagem"));
+                
+                professor.setDisciplina(new DisciplinaDAO().lerDisciplinasProfessores(rs.getInt("id_professor")));
+                
+                listaProfessor.add(professor);
+     
+                
+            }
+            
+            rs.close();
+            stmt.close();
+            conexao.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }

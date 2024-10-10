@@ -11,36 +11,35 @@ import java.util.List;
  *
  * @author Senai
  */
-public class Professor {
-    private int id_professor;
+public class Aluno {
+    private int id_alunos;
     private String nome;
     private String sobrenome;
-    private String senha;
-    private String cpf;
+    private String cpf ;
+    private String senha ;
     private String imagem;
-    private List<Disciplina> disciplina;
-   
+    private List<Tarefa> tarefa;
 
-    public Professor() {
+
+    public Aluno() {
     }
 
-    public Professor(int id_professor, String nome, String sobrenome, String senha, String cpf, String imagem, List<Disciplina> disciplina) {
-        this.id_professor = id_professor;
+    public Aluno(int id_alunos, String nome, String sobrenome, String cpf, String senha, String imagem, List<Tarefa> tarefa) {
+        this.id_alunos = id_alunos;
         this.nome = nome;
         this.sobrenome = sobrenome;
-        this.senha = senha;
         this.cpf = cpf;
+        this.senha = senha;
         this.imagem = imagem;
-        this.disciplina = disciplina;
-       
+        this.tarefa = tarefa;
     }
 
-    public int getId_professor() {
-        return id_professor;
+    public int getId_alunos() {
+        return id_alunos;
     }
 
-    public void setId_professor(int id_professor) {
-        this.id_professor = id_professor;
+    public void setId_alunos(int id_alunos) {
+        this.id_alunos = id_alunos;
     }
 
     public String getNome() {
@@ -59,20 +58,20 @@ public class Professor {
         this.sobrenome = sobrenome;
     }
 
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
     public String getCpf() {
         return cpf;
     }
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     public String getImagem() {
@@ -83,18 +82,15 @@ public class Professor {
         this.imagem = imagem;
     }
 
-    public List<Disciplina> getDisciplina() {
-        return disciplina;
+    public List<Tarefa> getTarefa() {
+        return tarefa;
     }
 
-    public void setDisciplina(List<Disciplina> disciplina) {
-        this.disciplina = disciplina;
+    public void setTarefa(List<Tarefa> tarefa) {
+        this.tarefa = tarefa;
     }
+    
+    
 
-
-    
-    
-    
-    
     
 }
